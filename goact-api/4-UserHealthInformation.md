@@ -50,10 +50,10 @@ weight |    *Optional* Weight in kilograms
 height |    *Optional* Height in centimeters  
 smoking |  *Optional* Response for Cigarettes per day. 
 alcoholConsumption |  *Optional* Response for Standard drinks per week. 
-field_name1 | Response for field_name1 ( It can be replaced with a filed name).
-field_name2 | Response for field name2 ( It can be replaced with a filed name). 
-field_name3 | Response for field name3 ( It can be replaced with a filed name). 
-field_name3 | Response for field name4 ( It can be replaced with a filed name). 
+field_name1 | Response for field_name1 ( It can be replaced with a field name).
+field_name2 | Response for field name2 ( It can be replaced with a field name). 
+field_name3 | Response for field name3 ( It can be replaced with a field name). 
+field_name3 | Response for field name4 ( It can be replaced with a field name). 
 ... | 
 ... | 
 ... | 
