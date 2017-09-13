@@ -14,7 +14,7 @@ Request must be authenticated by an Application specific token.
 Requested data should be JSON array.  
 
 ```sh
-curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X POST -d '[{"accessType" : "add", "firstName" : "Firstname", "lastName" : "Lastname", "age" : 33, "sex" : "F", "height" : 178, "weight" : 75, "bmi" : 75, "smoking" : 75, "alcoholConsumption" : 75 , "conceiveTry" : 75, "conceiveTryMonthly" : 75, "healthyBaby" : true, "sti" : true, "stiPositive" : false, "menstruation" : true, "havingSex" : 10, "havingSexMultiple" : 'unsure', "contraception" : true, "medicalConditions" : ["Diabetes","Endometriosis"] }]'  https://flinderscardio.goact.co/mint/api/v1/health/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
+curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X POST -d '[{"timestamp" : "1505269716123", "firstName" : "Firstname", "lastName" : "Lastname", "age" : 33, "sex" : "F", "height" : 178, "weight" : 75, "bmi" : 75, "smoking" : 75, "alcoholConsumption" : 75 , "conceiveTry" : 75, "conceiveTryMonthly" : 75, "healthyBaby" : true, "sti" : true, "stiPositive" : false, "menstruation" : true, "havingSex" : 10, "havingSexMultiple" : 'unsure', "contraception" : true, "medicalConditions" : ["Diabetes","Endometriosis"] }]'  https://flinderscardio.goact.co/mint/api/v1/health/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
 ```
 ### Example Response 1 if user health information has already been added.
 
@@ -42,8 +42,8 @@ Fields that belong to the user account
 
 Field | Description
 ---------|-------- 
-accessType  | 'new' or 'add'. **Must not be null**. new - for new visitor who has no cookie. add - for visitor who has cookie or logged in user.
 accessToken | goAct access token for this user. **Must not be null** if accessType is 'add'. Response **Must not be null** . For anonymous user it should be set with visitor ID
+timestamp  | **Must not be null**. This key should be unique in device database so that it could be updated if user would update record.
 age | *Optional* User's age.
 sex | *Optional* Biological sex. Choises are "M" for male, "F" for female or null.
 weight |    *Optional* Weight in kilograms
