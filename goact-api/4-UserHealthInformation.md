@@ -14,14 +14,15 @@ Request must be authenticated by an Application specific token.
 Requested data should be JSON array.  
 
 ```sh
-curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X POST -d '[{"timestamp" : "1505269716123", "firstName" : "Firstname", "lastName" : "Lastname", "age" : 33, "sex" : "F", "height" : 178, "weight" : 75, "bmi" : 75, "smoking" : 75, "alcoholConsumption" : 75 , "conceiveTry" : 75, "conceiveTryMonthly" : 75, "healthyBaby" : true, "sti" : true, "stiPositive" : false, "menstruation" : true, "havingSex" : 10, "havingSexMultiple" : 'unsure', "contraception" : true, "medicalConditions" : ["Diabetes","Endometriosis"] }]'  https://flinderscardio.goact.co/mint/api/v1/health/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
+curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X POST -d '[{"timestamp" : "1505269716123", "firstName" : "Firstname", "lastName" : "Lastname", "age" : 33, "sex" : "F", "height" : 178, "weight" : 75, "bmi" : 75, "smoking" : 75, "alcoholConsumption" : 75 , "conceiveTry" : 75, "conceiveTryMonthly" : 75, "healthyBaby" : true, "sti" : true, "stiPositive" : false, "menstruation" : true, "havingSex" : 10, "havingSexMultiple" : "unsure", "contraception" : true, "medicalConditions" : ["Diabetes","Endometriosis"] }]'  https://flinderscardio.goact.co/mint/api/v1/health/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
 ```
 ### Example Response 1 if user health information has already been added.
 
 ```javascript
 { 
   "code": "200"
-  "added" : 1
+  "added" : 1,
+  "updated" : 1
 }
 ```
 
@@ -59,6 +60,7 @@ field_name3 | Response for field name4 ( It can be replaced with a field name).
 ... | 
 code | 200 - success code
 added | The number of inserted responses into database.
+updated | The number of updated responses into database.
  
  
 
