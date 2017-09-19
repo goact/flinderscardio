@@ -145,7 +145,58 @@ The following error case descriptions apply for this API URL.
 
 
 
-## 3. Check user session time ( GET /mint/api/v1/auth/:access_token ) 
+## 3. Logout ( GET /mint/api/v1/logout ) 
+
+Get user logged out in the request in the goAct server. It doesn't need user access token. 
+
+### Request  
+
+**Authentication** 
+
+Request must be authenticated by Application specific token. goAct provides the 'ApplicationToken' for yourfertilyt.org.au to access APIs .
+
+**Example Request**
+
+```sh
+curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X GET https://test.goact.co/mint/api/v1/logout
+```
+
+### Response
+
+**Example Response**
+
+```javascript
+{  
+    "isLoggedIn" : false 
+}
+```
+
+Property     | Meaning
+-------------|--------  
+isLoggedIn   | The login status, false will be returned.
+
+
+
+**Example Error Response** 
+
+The following error case descriptions apply for this API URL. 
+
+```javascript
+{
+    "error" : "error_identifier_string",
+    "description" : "Human readable description of the error"
+}
+``` 
+
+ HTTP Status |Error identifier | Description
+-------------|-----------------|------------
+200          |             400 | The request contained invalid or expried 'access token' (a more detailed error description may be included).
+200          |             404 | The requested resource was not found on server   
+
+
+
+
+## 4. Check user session time ( GET /mint/api/v1/auth/:access_token ) 
 
 Get information about the access token used in the request and extend user session time in the goAct application.
 
@@ -203,7 +254,7 @@ The following error case descriptions apply for this API URL.
 
 
 
-## 4. User request new password ( POST /mint/api/v1/auth/request_new_password )
+## 5. User request new password ( POST /mint/api/v1/auth/request_new_password )
 
 This flow is used when the end user requests a new password from the frontend . 
 
